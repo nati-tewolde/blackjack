@@ -39,5 +39,26 @@ public class MainApp {
                 }
             }
         }
+
+        Player winner = null;
+        int highestScore = 0;
+        for (Player player : players) {
+            int score = player.getScore();
+            if (score <= 21 && score > highestScore) {
+                highestScore = score;
+                winner = player;
+            }
+        }
+
+        System.out.println("\n=== FINAL SCORES ===");
+        for (Player player : players) {
+            System.out.println(player);
+        }
+
+        if (winner != null) {
+            System.out.println("\n🏆 Winner: " + winner.getName() + " with " + winner.getScore() + " points!");
+        } else {
+            System.out.println("\nNo winners — everyone busted!");
+        }
     }
 }
