@@ -33,9 +33,6 @@ public class Hand {
         return value;
     }
 
-    public ArrayList<Card> getCards() {
-        return cards;
-    }
 
     public void showHand() {
         for (Card card : cards) {
